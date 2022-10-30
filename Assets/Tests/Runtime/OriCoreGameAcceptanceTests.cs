@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Character;
+using Components;
 using GameFramework.AcceptanceTesting;
 using NUnit.Framework;
 using UnityEngine;
@@ -46,7 +47,7 @@ namespace Tests.Runtime
             
             yield return character;
             
-            VirtualInput characterInput = character.GetComponent<CharacterCore>().GetCoreComponent<VirtualInput>();
+            VirtualInput characterInput = character.GetComponent<CharacterMonoBehaviour>().GetCoreComponent<VirtualInput>();
             characterInput.SetInput(Vector2.right);
         }
 
@@ -56,7 +57,8 @@ namespace Tests.Runtime
             
             yield return character;
 
-            Vector2 currentVelocity = character.GetComponent<CharacterCore>().GetCoreComponent<Movement>()
+            CharacterMonoBehaviour characterMonoBehaviour = character.GetComponent<CharacterMonoBehaviour>();
+            Vector2 currentVelocity = characterMonoBehaviour.GetComponent<Movement>()
                 .CurrentVelocity;
             float actualDirectionAngle = Vector2.Angle(Vector2.right, currentVelocity);
             Assert.That(actualDirectionAngle, Is.LessThan(5f));

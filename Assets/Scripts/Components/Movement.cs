@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Character
+namespace Components
 {
     public class Movement
     {

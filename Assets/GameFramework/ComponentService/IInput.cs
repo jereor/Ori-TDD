@@ -1,4 +1,4 @@
-namespace Character
+namespace GameFramework.ComponentService
 {
     public interface IInput
     {

@@ -5,7 +5,9 @@
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "AcceptanceTesting",
-        "Character"
+        "Character",
+        "Components",
+        "ComponentService"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
